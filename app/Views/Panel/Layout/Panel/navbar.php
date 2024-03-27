@@ -20,14 +20,14 @@
     </a>
     <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="#!">Jenis Urgensi</a>
-            <a class="collapse-item" href="#!">Jenis Layanan</a>
+            <a class="collapse-item" href="<?= route_to('data-jenis-urgensi') ?>">Jenis Urgensi</a>
+            <a class="collapse-item" href="<?= route_to('data-jenis-layanan') ?>">Jenis Layanan</a>
         </div>
     </div>
 </li>
 
 <li class="nav-item">
-    <a class="nav-link" href="#!">
+    <a class="nav-link" href="<?= route_to('data-layanan') ?>">
         <i class="fas fa-fw fa-chart-area"></i>
         <span>Layanan</span></a>
 </li>

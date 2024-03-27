@@ -12,21 +12,21 @@ $routes->group('api', ['namespace' => 'App\Controllers\Api'], function ($routes)
         $routes->post('create', 'JenisLayanan::create');
         $routes->get('edit/(:num)', 'JenisLayanan::edit/$1');
         $routes->post('update/(:num)', 'JenisLayanan::update/$1');
-        $routes->delete('delete/(:num)', 'JenisLayanan::delete/$1');
+        $routes->delete('delete/(:num)', 'JenisLayanan::delete/$1', ['as' => 'jenis-layanan-delete']);
     });
     $routes->group('jenis-urgensi', function ($routes) {
         $routes->get('/', 'JenisUrgensi::index');
         $routes->post('create', 'JenisUrgensi::create');
         $routes->get('edit/(:num)', 'JenisUrgensi::edit/$1');
         $routes->post('update/(:num)', 'JenisUrgensi::update/$1');
-        $routes->delete('delete/(:num)', 'JenisUrgensi::delete/$1');
+        $routes->delete('delete/(:num)', 'JenisUrgensi::delete/$1', ['as' => 'jenis-urgensi-delete']);
     });
     $routes->group('layanan', function ($routes) {
         $routes->get('/', 'Layanan::index');
         $routes->post('create', 'Layanan::create');
         $routes->get('edit/(:num)', 'Layanan::edit/$1');
         $routes->post('update/(:num)', 'Layanan::update/$1');
-        $routes->delete('delete/(:num)', 'Layanan::delete/$1');
+        $routes->delete('delete/(:num)', 'Layanan::delete/$1', ['as' => 'layanan-delete']);
     });
 });
 
