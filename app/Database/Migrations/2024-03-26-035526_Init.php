@@ -111,10 +111,18 @@ class Init extends Migration
                 'null' => true,
             ],
         ]);
+
+        $this->forge->addKey('id', true);
+        // $this->forge->addForeignKey('jenis_layanan_id', 'jenis_layanan', 'id', 'CASCADE', 'CASCADE');
+        // $this->forge->addForeignKey('jenis_urgensi_id', 'jenis_urgensi', 'id', 'CASCADE', 'CASCADE');
+        // $this->forge->addForeignKey('user_id', 'users', 'id', 'CASCADE', 'CASCADE');
+        $this->forge->createTable('layanan');
     }
 
     public function down()
     {
-        //
+        $this->forge->dropTable('jenis_layanan');
+        $this->forge->dropTable('jenis_urgensi');
+        $this->forge->dropTable('layanan');
     }
 }
