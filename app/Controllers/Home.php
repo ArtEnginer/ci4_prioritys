@@ -4,8 +4,15 @@ namespace App\Controllers;
 
 class Home extends BaseController
 {
+
+    public function __construct()
+    {
+        $this->config = config('Theme');
+        $this->data['config'] = $this->config;
+    }
     public function index(): string
     {
-        return view('welcome_message');
+
+        return view('Panel\Page\panel', $this->data);
     }
 }
