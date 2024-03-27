@@ -14,16 +14,20 @@
         <span>Dashboard</span></a>
 </li>
 <li class="nav-item">
-    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
-        aria-controls="collapsePages">
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
         <i class="fas fa-fw fa-folder"></i>
-        <span>Pages</span>
+        <span>Master Data</span>
     </a>
     <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Login Screens:</h6>
-            <a class="collapse-item" href="#!">Login</a>
-            <a class="collapse-item" href="#!">Register</a>
+            <a class="collapse-item" href="#!">Jenis Urgensi</a>
+            <a class="collapse-item" href="#!">Jenis Layanan</a>
         </div>
     </div>
+</li>
+
+<li class="nav-item">
+    <a class="nav-link" href="#!">
+        <i class="fas fa-fw fa-chart-area"></i>
+        <span>Layanan</span></a>
 </li>
