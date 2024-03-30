@@ -35,6 +35,7 @@
                     </ul>
                 </nav>
                 <div class="container-fluid">
+                    <?= view($config->theme['panel'] . '_message') ?>
                     <?= $this->renderSection('main') ?>
                 </div>
             </div>
