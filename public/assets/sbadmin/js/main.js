@@ -1,6 +1,6 @@
 let Table = new DataTable(".datatable");
 document.addEventListener("DOMContentLoaded", function () {
-  const tabs = document.querySelectorAll(".nav-link");
+  const tabs = document.querySelectorAll(".tab-link");
 
   tabs.forEach((tab) => {
     tab.addEventListener("click", function () {

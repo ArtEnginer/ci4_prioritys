@@ -27,7 +27,7 @@
 </li>
 
 <li class="nav-item">
-    <a class="nav-link" href="<?= route_to('data.layanan') ?>">
+    <a class="nav-link" href="<?= route_to('data.layanan') . "?tab=pending" ?>">
         <i class="fas fa-fw fa-chart-area"></i>
         <span>Layanan</span></a>
 </li>

@@ -10,13 +10,13 @@
     <div class="col-md-12">
         <ul class="nav nav-pills">
             <li class="nav-item">
-                <a class="nav-link" data-bs-target="pending">Pending</a>
+                <a class="nav-link tab-link" data-bs-target="pending">Pending</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-bs-target="inprogress">InProgress</a>
+                <a class="nav-link tab-link" data-bs-target="inprogress">InProgress</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-bs-target="completed">Completed</a>
+                <a class="nav-link tab-link" data-bs-target="completed">Completed</a>
             </li>
         </ul>
     </div>
