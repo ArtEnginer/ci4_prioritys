@@ -74,9 +74,9 @@ class Init extends Migration
                 'unsigned' => true,
                 'auto_increment' => true,
             ],
-            'nama' => [
-                'type' => 'VARCHAR',
-                'constraint' => 100,
+            'user_id' => [
+                'type' => 'INT',
+                'constraint' => 5,
             ],
             'jenis_layanan_id' => [
                 'type' => 'INT',
@@ -86,17 +86,13 @@ class Init extends Migration
                 'type' => 'INT',
                 'constraint' => 5,
             ],
-            'user_id' => [
-                'type' => 'INT',
-                'constraint' => 5,
-            ],
             'status' => [
-                'type' => 'INT',
-                'constraint' => 1,
+                'type' => 'varchar',
+                'constraint' => 100,
             ],
             'nilai_bobot' => [
-                'type' => 'INT',
-                'constraint' => 5,
+                'type' => 'DOUBLE',
+                'constraint' => 12,
             ],
             'prioritas' => [
                 'type' => 'INT',

@@ -62,4 +62,10 @@ class JenisUrgensi extends BaseController
         }
         return redirect()->route('data.jenis.urgensi')->with('message', 'Tidak ada perubahan data');
     }
+
+    public function delete($id)
+    {
+        $this->model->delete($id);
+        return redirect()->route('data.jenis.layanan')->with('message', 'Data telah berhasil dihapus');;
+    }
 }

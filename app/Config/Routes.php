@@ -8,11 +8,6 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'Home::index');
 
 $routes->group('panel', ['namespace' => 'App\Controllers\Panel'], function ($routes) {
-    $routes->group('jenis-layanan', function ($routes) {
-        $routes->get('/', 'JenisLayanan::index', ['as' => 'data.jenis.layanan']);
-        $routes->get('create', 'JenisLayanan::create', ['as' => 'jenis.layanan.create']);
-        $routes->get('edit/(:num)', 'JenisLayanan::edit/$1', ['as' => 'jenis.layanan.edit']);
-    });
     $routes->group('jenis-urgensi', function ($routes) {
         $routes->get('/', 'JenisUrgensi::index', ['as' => 'data.jenis.urgensi']);
         $routes->get('create', 'JenisUrgensi::create', ['as' => 'jenis.urgensi.create']);
@@ -20,9 +15,18 @@ $routes->group('panel', ['namespace' => 'App\Controllers\Panel'], function ($rou
         $routes->get('edit/(:num)', 'JenisUrgensi::edit/$1', ['as' => 'jenis.urgensi.edit']);
         $routes->post('update/(:num)', 'JenisUrgensi::update/$1', ['as' => 'jenis.urgensi.update']);
     });
+    $routes->group('jenis-layanan', function ($routes) {
+        $routes->get('/', 'JenisLayanan::index', ['as' => 'data.jenis.layanan']);
+        $routes->get('create', 'JenisLayanan::create', ['as' => 'jenis.layanan.create']);
+        $routes->post('store', 'JenisLayanan::store', ['as' => 'jenis.layanan.store']);
+        $routes->get('edit/(:num)', 'JenisLayanan::edit/$1', ['as' => 'jenis.layanan.edit']);
+        $routes->post('update/(:num)', 'JenisLayanan::update/$1', ['as' => 'jenis.layanan.update']);
+    });
     $routes->group('layanan', function ($routes) {
         $routes->get('/', 'Layanan::index', ['as' => 'data.layanan']);
         $routes->get('create', 'Layanan::create', ['as' => 'layanan.create']);
+        $routes->post('store', 'Layanan::store', ['as' => 'layanan.store']);
         $routes->get('edit/(:num)', 'Layanan::edit/$1', ['as' => 'layanan.edit']);
+        $routes->post('update/(:num)', 'Layanan::update/$1', ['as' => 'layanan.update']);
     });
 });

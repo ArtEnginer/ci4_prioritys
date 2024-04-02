@@ -13,7 +13,7 @@ class JenisLayananModel extends Model
     protected $returnType       = JenisLayanan::class;
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $allowedFields    = ['nama', 'bobot'];
 
     protected bool $allowEmptyInserts = false;
 

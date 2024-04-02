@@ -11,5 +11,6 @@ class Init extends Seeder
         // call seeders
         $this->call('JenisLayanan');
         $this->call('JenisUrgensi');
+        $this->call('Layanan');
     }
 }
