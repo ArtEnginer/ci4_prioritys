@@ -8,6 +8,7 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'Home::index');
 
 $routes->group('panel', ['namespace' => 'App\Controllers\Panel'], function ($routes) {
+    $routes->get('/', 'Dashboard::index', ['as' => 'panel.dashboard']);
     $routes->group('jenis-urgensi', function ($routes) {
         $routes->get('/', 'JenisUrgensi::index', ['as' => 'data.jenis.urgensi']);
         $routes->get('create', 'JenisUrgensi::create', ['as' => 'jenis.urgensi.create']);

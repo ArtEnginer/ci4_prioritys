@@ -9,7 +9,7 @@
     Panel
 </div>
 <li class="nav-item active">
-    <a class="nav-link" href="<?= route_to('/') ?>">
+    <a class="nav-link" href="<?= route_to('panel.dashboard') ?>">
         <i class="fas fa-fw fa-tachometer-alt"></i>
         <span>Dashboard</span></a>
 </li>
@@ -29,5 +29,5 @@
 <li class="nav-item">
     <a class="nav-link" href="<?= route_to('data.layanan') . "?tab=pending" ?>">
         <i class="fas fa-fw fa-chart-area"></i>
-        <span>Layanan</span></a>
+        <span>Daftar Pengajuan</span></a>
 </li>

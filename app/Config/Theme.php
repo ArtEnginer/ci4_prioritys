@@ -21,7 +21,7 @@ class Theme extends BaseConfig
      * @var null|string
      */
     public $theme  = [
-        'landing'       => '',
+        'landing'       => 'App\Views\Landing\Layout\\',
         'auth'          => '',
         'panel'         => 'App\Views\Panel\Layout\Panel\\',
     ];

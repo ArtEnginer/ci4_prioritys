@@ -12,7 +12,6 @@ class Home extends BaseController
     }
     public function index(): string
     {
-
-        return view('Panel\Page\panel', $this->data);
+        return view('Landing\Page\landing', $this->data);
     }
 }
