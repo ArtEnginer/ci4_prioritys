@@ -16,26 +16,38 @@ class Layanan extends BaseController
 
     public function index()
     {
-        $data = $this->model->findAll();
 
-        // Menggunakan algoritma priority scheduling
-        $data = array_map(function ($item) {
-            $item->priority = $item->jenis_urgensi->bobot + $item->jenis_layanan->bobot;
-            return $item;
-        }, $data);
-        usort($data, function ($a, $b) {
-            return $a->priority <=> $b->priority;
-        });
+        if ($this->request->getGet()['tab'] == 'pending') {
+            $data = $this->model->where('status', 'pending')->findAll();
 
-        // Jika prioritas sama, gunakan algoritma FIFO
-        usort($data, function ($a, $b) {
-            if ($a->priority === $b->priority) {
-                return strtotime($a->created_at) - strtotime($b->created_at);
-            }
-            return 0; // Prioritas tidak sama, tidak perlu pengurutan tambahan
-        });
+            // Menggunakan algoritma priority scheduling
+            $data = array_map(function ($item) {
+                $item->bobot = $item->jenis_urgensi->bobot + $item->jenis_layanan->bobot;
+                return $item;
+            }, $data);
+            usort($data, function ($a, $b) {
+                return $a->bobot <=> $b->bobot;
+            });
 
+            // Jika prioritas sama, gunakan algoritma FIFO
+            usort($data, function ($a, $b) {
+                if ($a->bobot === $b->bobot) {
+                    return strtotime($a->created_at) - strtotime($b->created_at);
+                }
+                return 0;
+            });
+            $rank = 1;
+            $data = array_map(function ($item) use (&$rank) {
+                $item->rank = $rank++;
+                return $item;
+            }, $data);
+        } elseif ($this->request->getGet()['tab'] == 'inprogress') {
+            $data = $this->model->where('status', 'InProgress')->findAll();
+        } else {
+            $data = $this->model->where('status', 'Completed')->findAll();
+        }
         $this->data['items'] = $data;
+
 
         return view('Panel/Page/Layanan/index', $this->data);
     }

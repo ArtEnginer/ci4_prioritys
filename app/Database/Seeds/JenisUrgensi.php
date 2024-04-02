@@ -25,6 +25,7 @@ class JenisUrgensi extends Seeder
                 'nama' => 'sangat penting',
                 'bobot' => 4,
             ],
+
         ];
         $this->db->table('jenis_urgensi')->insertBatch($data);
     }

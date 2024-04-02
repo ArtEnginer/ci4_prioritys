@@ -90,14 +90,6 @@ class Init extends Migration
                 'type' => 'varchar',
                 'constraint' => 100,
             ],
-            'nilai_bobot' => [
-                'type' => 'DOUBLE',
-                'constraint' => 12,
-            ],
-            'prioritas' => [
-                'type' => 'INT',
-                'constraint' => 5,
-            ],
             'created_at' => [
                 'type' => 'DATETIME',
                 'null' => true,

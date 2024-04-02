@@ -8,10 +8,23 @@
 
 <div class="row">
     <div class="col-md-12">
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a class="nav-link" data-bs-target="pending">Pending</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-target="inprogress">InProgress</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-target="completed">Completed</a>
+            </li>
+        </ul>
+    </div>
+    <div class="col-md-12">
         <div class="card shadow mb-4">
             <div class="card-body">
                 <div class="table-responsive">
-                    <table class="table table-bordered" id="datatable" width="100%" cellspacing="0">
+                    <table class="table table-bordered datatable" id="datatable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
                                 <th width="10px">No</th>
@@ -19,7 +32,7 @@
                                 <th>Jenis Layanan</th>
                                 <th>Urgensi</th>
                                 <th>Status</th>
-                                <th>Nilai Bobot</th>
+                                <th>Bobot Total</th>
                                 <th>Prioritas</th>
                                 <th>Tanggal Pengajuan</th>
                                 <th>Action</th>
@@ -34,8 +47,8 @@
                                     <td><?= $row->jenis_layanan->nama ?></td>
                                     <td><?= $row->jenis_urgensi->nama ?></td>
                                     <td><?= $row->status ?></td>
-                                    <td><?= $row->nilai_bobot ?></td>
-                                    <td><?= $row->priority ?></td>
+                                    <td><?= $row->bobot ?></td>
+                                    <td><?= $row->rank ?></td>
                                     <td><?= $row->created_at ?></td>
                                     <td>
                                         <a href="<?= route_to('layanan.edit', $row->id) ?>" class=" btn btn-sm btn-warning"><i class="fas fa-edit"></i></a>
@@ -50,6 +63,7 @@
         </div>
     </div>
 </div>
+
 
 
 <?= $this->endSection() ?>
