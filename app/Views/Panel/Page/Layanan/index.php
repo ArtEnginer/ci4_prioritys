@@ -28,12 +28,14 @@
                         <thead>
                             <tr>
                                 <th width="10px">No</th>
-                                <th>Nama User</th>
+                                <th>Nama</th>
                                 <th>Jenis Layanan</th>
                                 <th>Urgensi</th>
                                 <th>Status</th>
-                                <th>Bobot Total</th>
-                                <th>Prioritas</th>
+                                <?php if ($inprogress == 0 and $completed == 0) : ?>
+                                    <th>Bobot Total</th>
+                                    <th>Prioritas</th>
+                                <?php endif; ?>
                                 <th>Tanggal Pengajuan</th>
                                 <th>Action</th>
                             </tr>
@@ -43,17 +45,20 @@
                             foreach ($items as $row) : ?>
                                 <tr>
                                     <td><?= $no++ ?></td>
-                                    <td><?= $row->user_id ?></td>
+                                    <td><?= $row->nama ?></td>
                                     <td><?= $row->jenis_layanan->nama ?></td>
                                     <td><?= $row->jenis_urgensi->nama ?></td>
                                     <td><?= $row->status ?></td>
-                                    <td><?= $row->bobot ?></td>
-                                    <td><?= $row->rank ?></td>
+                                    <?php if ($inprogress == 0 and $completed == 0) : ?>
+                                        <td><?= $row->bobot ?></td>
+                                        <td><?= $row->rank ?></td>
+                                    <?php endif; ?>
                                     <td><?= $row->created_at ?></td>
                                     <td>
-                                        <a href="<?= route_to('layanan.edit', $row->id) ?>" class=" btn btn-sm btn-warning"><i class="fas fa-edit"></i></a>
-                                        <a href="<?= route_to('layanan.delete', $row->id) ?>" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></a>
 
+                                        <a href="<?= route_to('layanan.show', $row->id) ?>" class="btn btn-sm btn-info"><i class="fas fa-eye"></i></a>
+                                        <a href="<?= route_to('layanan.accept', $row->id) ?>" class="btn btn-sm btn-success"><i class="fas fa-check"></i></a>
+                                        <a href="<?= route_to('layanan.delete', $row->id) ?>" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></a>
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>

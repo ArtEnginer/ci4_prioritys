@@ -13,12 +13,11 @@ class JenisLayananModel extends Model
     protected $returnType       = JenisLayanan::class;
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['nama', 'bobot'];
-
+    protected $allowedFields    = ['nama', 'bobot', 'persyaratan', 'deskripsi'];
     protected bool $allowEmptyInserts = false;
 
     // Dates
-    protected $useTimestamps = false;
+    protected $useTimestamps = true;
     protected $dateFormat    = 'datetime';
     protected $createdField  = 'created_at';
     protected $updatedField  = 'updated_at';

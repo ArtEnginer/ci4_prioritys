@@ -12,4 +12,5 @@ document.addEventListener("DOMContentLoaded", function () {
       window.location.href = `?${params.toString()}`;
     });
   });
+  $(".content").richText();
 });

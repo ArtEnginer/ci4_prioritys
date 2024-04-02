@@ -24,6 +24,12 @@ class Init extends Migration
                 'type' => 'INT',
                 'constraint' => 5,
             ],
+            'persyaratan' => [
+                'type' => 'TEXT',
+            ],
+            'deskripsi' => [
+                'type' => 'TEXT',
+            ],
             'created_at' => [
                 'type' => 'DATETIME',
                 'null' => true,
@@ -74,10 +80,30 @@ class Init extends Migration
                 'unsigned' => true,
                 'auto_increment' => true,
             ],
-            'user_id' => [
-                'type' => 'INT',
-                'constraint' => 5,
+            'nama' => [
+                'type' => 'varchar',
+                'constraint' => 100,
             ],
+            'nik' => [
+                'type' => 'varchar',
+                'constraint' => 100,
+            ],
+            'email' => [
+                'type' => 'varchar',
+                'constraint' => 100,
+                'null' => true,
+            ],
+            'phone' => [
+                'type' => 'varchar',
+                'constraint' => 100,
+            ],
+            'address' => [
+                'type' => 'TEXT',
+            ],
+            'file_persyaratan' => [
+                'type' => 'TEXT',
+            ],
+
             'jenis_layanan_id' => [
                 'type' => 'INT',
                 'constraint' => 5,

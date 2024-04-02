@@ -13,7 +13,12 @@ class Layanan extends Seeder
         $data = [];
         for ($i = 0; $i < 10; $i++) {
             $data[] = [
-                'user_id' => $faker->numberBetween(1, 10),
+                'nama' => $faker->word(),
+                'nik' => $faker->randomNumber(9),
+                'email' => $faker->email(),
+                'phone' => $faker->phoneNumber(),
+                'address' => $faker->address(),
+                'file_persyaratan' => $faker->word() . '.pdf',
                 'jenis_layanan_id' => $faker->numberBetween(1, 5),
                 'jenis_urgensi_id' => $faker->numberBetween(1, 4),
                 'status' => $faker->randomElement(['Pending', 'InProgress', 'Completed']),

@@ -11,12 +11,14 @@
         <div class="card shadow mb-4">
             <div class="card-body">
                 <div class="table-responsive">
-                    <table class="table table-bordered" id="datatable" width="100%" cellspacing="0">
+                    <table class="table table-bordered datatable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
                                 <th width="10px">No</th>
                                 <th>Jenis layanan</th>
                                 <th>Bobot</th>
+                                <th>Persyaratan</th>
+                                <th>Deskripsi</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -27,6 +29,8 @@
                                     <td><?= $no++ ?></td>
                                     <td><?= $row->nama ?></td>
                                     <td><?= $row->bobot ?></td>
+                                    <td><?= $row->persyaratan ?></td>
+                                    <td><?= $row->deskripsi ?></td>
                                     <td>
                                         <a href="<?= route_to('jenis.layanan.edit', $row->id) ?>" class=" btn btn-sm btn-warning"><i class="fas fa-edit"></i></a>
                                         <a href="<?= route_to('jenis.layanan.delete', $row->id) ?>" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></a>
