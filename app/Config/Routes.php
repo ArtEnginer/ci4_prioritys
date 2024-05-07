@@ -1,6 +1,8 @@
 <?php
 
+use App\Controllers\Migrate;
 use CodeIgniter\Router\RouteCollection;
+
 
 /**
  * @var RouteCollection $routes
@@ -37,5 +39,17 @@ $routes->group('panel', ['namespace' => 'App\Controllers\Panel'], function ($rou
         $routes->get('delete/(:num)', 'Layanan::delete/$1', ['as' => 'layanan.delete']);
         $routes->get('accept/(:num)', 'Layanan::accept/$1', ['as' => 'layanan.accept']);
         $routes->get('show/(:num)', 'Layanan::show/$1', ['as' => 'layanan.show']);
+    });
+});
+
+service('auth')->routes($routes);
+
+$routes->environment('development', static function ($routes) {
+    $routes->get('migrate', [Migrate::class, 'index']);
+});
+
+$routes->environment('production', static function ($routes) {
+    $routes->get('migrate', function () {
+        return 'Nothing to see here';
     });
 });
