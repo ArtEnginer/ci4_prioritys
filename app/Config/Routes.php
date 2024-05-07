@@ -6,6 +6,9 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 $routes->get('/', 'Home::index');
+$routes->post('pengajuan', 'Home::pengajuan', ['as' => 'pengajuan']);
+
+
 
 $routes->group('panel', ['namespace' => 'App\Controllers\Panel'], function ($routes) {
     $routes->get('/', 'Dashboard::index', ['as' => 'panel.dashboard']);
