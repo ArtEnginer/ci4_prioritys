@@ -23,6 +23,6 @@ class Dashboard extends BaseController
         $this->data['jmlLayananProgress'] = $this->layananModel->where('status', 'InProgress')->countAllResults();
         $this->data['jmlLayananSuccess'] = $this->layananModel->where('status', 'Completed')->countAllResults();
 
-        return view('Panel\Page\panel', $this->data);
+        return view('Panel/Page/panel', $this->data);
     }
 }
