@@ -35,6 +35,9 @@
         "sort-packages": true
     },
     "scripts": {
-        "test": "phpunit"
+        "test": "phpunit",
+        "deploy": "cp -r -v public/. ../public_html && cp public/index-prod.php ../public_html/index.php",
+        "envdev": "cp .env-dev .env",
+        "envprod": "cp .env-prod .env"
     }
 }
