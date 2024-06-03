@@ -17,7 +17,7 @@ class Home extends BaseController
     {
         $this->data['jenisLayanan'] = $this->jenisLayananModel->findAll();
         $this->data['jenisUrgensi'] = $this->jenisUrgensiModel->findAll();
-        return view('Landing\Page\landing', $this->data);
+        return view('Landing/Page/landing', $this->data);
     }
     public function pengajuan()
     {
