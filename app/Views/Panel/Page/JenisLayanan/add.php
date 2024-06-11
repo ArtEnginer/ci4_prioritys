@@ -28,16 +28,17 @@
                     <div class="mb-3 row">
                         <label for="deskripsi" class="col-sm-3 col-form-label">Deskripsi</label>
                         <div class="col-sm-9">
-                            <textarea name="deskripsi"></textarea>
+                            <textarea name="deskripsi" style="width: 100%; height: 100px;"></textarea>
                         </div>
                     </div>
 
                     <div class="mb-3 row">
                         <label for="persyaratan" class="col-sm-3 col-form-label">Persyaratan</label>
                         <div class="col-sm-9">
-                            <textarea class="content" name="persyaratan"></textarea>
+                            <textarea name="persyaratan" style="width: 100%; height: 100px;"></textarea>
                         </div>
                     </div>
+
 
             </div>
             <div class="card-footer">

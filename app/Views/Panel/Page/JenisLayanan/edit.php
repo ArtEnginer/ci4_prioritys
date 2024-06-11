@@ -28,14 +28,14 @@
                     <div class="mb-3 row">
                         <label for="deskripsi" class="col-sm-3 col-form-label">Deskripsi</label>
                         <div class="col-sm-9">
-                            <textarea name="deskripsi"><?= $item->deskripsi ?></textarea>
+                            <textarea style="width: 100%; height: 100px;" name="deskripsi"><?= $item->deskripsi ?></textarea>
                         </div>
                     </div>
 
                     <div class="mb-3 row">
                         <label for="persyaratan" class="col-sm-3 col-form-label">Persyaratan</label>
                         <div class="col-sm-9">
-                            <textarea class="content" name="persyaratan"><?= $item->persyaratan ?></textarea>
+                            <textarea style="width: 100%; height: 100px;" name="persyaratan"><?= $item->persyaratan ?></textarea>
                         </div>
                     </div>
 

@@ -147,7 +147,6 @@
         </div>
     </div>
 </header>
-<!-- About Section-->
 <section class="bg-light py-5" id="fpengajuan">
     <div class="container px-5">
         <div class="row gx-5 justify-content-center">
@@ -160,9 +159,9 @@
 
                 <div class="row gx-5 justify-content-center">
                     <div class="col-lg-10">
-                        <div class="card border-0 shadow">
+                        <div class="card border-0 shadow" id="form-card">
                             <div class="card-body p-4 p-lg-5">
-                                <form action="<?= route_to('pengajuan') ?>" method="post" enctype="multipart/form-data">
+                                <form id="pengajuanForm" method="post" enctype="multipart/form-data">
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="mb-3">
@@ -238,12 +237,27 @@
                                 </form>
                             </div>
                         </div>
+
+                        <!-- Hidden notification card -->
+                        <div class="card border-0 shadow d-none" id="notification-card">
+                            <div class="card-body p-4 p-lg-5 text-center">
+                                <div class="my-5">
+                                    <h3 class="display-5 fw-bolder">Pengajuan Berhasil</h3>
+                                    <p class="lead fw-light mb-4">Terima kasih atas pengajuan Anda. Kami akan menghubungi Anda melalui WhatsApp.</p>
+                                    <div class="spinner-border text-success" role="status">
+                                        <span class="visually-hidden">Loading...</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         var selectService = document.getElementById('service');
@@ -255,7 +269,43 @@
             var persyaratanValue = selectedOption.getAttribute('data-persyaratan');
             persyaratanDisplay.textContent = persyaratanValue;
         });
+
+        // Form submission handler using AJAX
+        $('#pengajuanForm').submit(function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            var formData = new FormData(this);
+
+            $.ajax({
+                url: "<?= route_to('pengajuan') ?>",
+                type: 'POST',
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function(response) {
+                    // Assuming the response indicates success
+                    var formCard = document.getElementById('form-card');
+                    var notificationCard = document.getElementById('notification-card');
+
+                    // Hide the form card
+                    formCard.classList.add('d-none');
+
+                    // Show the notification card with animation
+                    notificationCard.classList.remove('d-none');
+                    notificationCard.classList.add('animate__animated', 'animate__fadeIn');
+
+                    // Optionally, you can reset the form here
+                    $('#pengajuanForm')[0].reset();
+                },
+                error: function() {
+                    // Handle errors here
+                    alert('Pengajuan gagal. Silakan coba lagi.');
+                }
+            });
+        });
     });
 </script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
 <?= $this->endSection() ?>

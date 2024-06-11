@@ -6,6 +6,17 @@
 </div>
 
 <div class="row">
+    <style>
+        .tab-link {
+            background-color: #f0f0f0;
+            /* Warna latar belakang */
+            padding: 10px;
+            /* Padding agar lebih terlihat */
+            border-radius: 5px;
+            /* Membuat sudut bulat */
+        }
+    </style>
+
     <div class="col-md-12">
         <ul class="nav nav-pills">
             <li class="nav-item">
@@ -19,6 +30,7 @@
             </li>
         </ul>
     </div>
+
     <div class="col-md-12">
         <div class="card shadow mb-4">
             <div class="card-body">
